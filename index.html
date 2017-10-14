@@ -26,7 +26,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody ng-repeat-start="item in estrutura">
+                <tbody ng-repeat="item in estrutura track by $index">
                     <tr ng-if="item.estado">
                         <td>{{$index}}</td>
                         <td>{{item.estado}}</td>
@@ -34,131 +34,259 @@
                         <td>{{item.sigla}}</td>
                         <td>
                             <button class="btn btn-success btn-block" 
-                                    ng-click="item.isCollapsed=!item.isCollapsed">Expand</button>
+                                    ng-click="collapse($index)">Expand</button>
                         </td>
-                </tbody>
-                <tbody ng-repeat-end ng-show="item.isCollapsed">
+                        <td>
+                                <button class="btn btn-warning btn-block" 
+                                        ng-click="item.isCollapsed2=!item.isCollapsed2">Expand</button>
+                        </td>
+                    </tr>
+                    <tr ng-show="item.isCollapsed2">
                         <td colspan="6">
                                 <table class="table ">
-                                <thead>
-                                    <tr>
-                                        <th>Option1</th>
-                                        <th>Option2</th>
-                                        <th>Option3</th>
-                                        <th>Option4</th>
-                                        <th>Option5</th>
-                                        <th>Option6</th>
-                                        <th>Option7</th>
-                                        <th>Option8</th>
-                                        <th>Option9</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                    <thead>
                                         <tr>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">A
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
+                                                <th>Option1</th>
+                                                <th>Option2</th>
+                                                <th>Option3</th>
+                                                <th>Option4</th>
+                                                <th>Option5</th>
+                                                <th>Option6</th>
+                                                <th>Option7</th>
+                                                <th>Option8</th>
+                                                <th>Option9</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">A
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                        </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">B
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
                                                                 <li><a href="#">HTML</a></li>
                                                                 <li><a href="#">CSS</a></li>
                                                                 <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                    </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">B
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">C
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">D
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">E
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">F
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">G
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">H
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
-                                            <td>
-                                                    <div class="dropdown">
-                                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">I
-                                                            <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                              <li><a href="#">HTML</a></li>
-                                                              <li><a href="#">CSS</a></li>
-                                                              <li><a href="#">JavaScript</a></li>
-                                                            </ul>
-                                                          </div>
-                                            </td>
+                                                                </ul>
+                                                                </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">C
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                <li><a href="#">HTML</a></li>
+                                                                <li><a href="#">CSS</a></li>
+                                                                <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                                </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">D
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                <li><a href="#">HTML</a></li>
+                                                                <li><a href="#">CSS</a></li>
+                                                                <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                                </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">E
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                <li><a href="#">HTML</a></li>
+                                                                <li><a href="#">CSS</a></li>
+                                                                <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                                </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">F
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                <li><a href="#">HTML</a></li>
+                                                                <li><a href="#">CSS</a></li>
+                                                                <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                                </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">G
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                <li><a href="#">HTML</a></li>
+                                                                <li><a href="#">CSS</a></li>
+                                                                <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                                </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">H
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                <li><a href="#">HTML</a></li>
+                                                                <li><a href="#">CSS</a></li>
+                                                                <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                                </div>
+                                                </td>
+                                                <td>
+                                                        <div class="dropdown">
+                                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">I
+                                                                <span class="caret"></span></button>
+                                                                <ul class="dropdown-menu">
+                                                                <li><a href="#">HTML</a></li>
+                                                                <li><a href="#">CSS</a></li>
+                                                                <li><a href="#">JavaScript</a></li>
+                                                                </ul>
+                                                                </div>
+                                                </td>
                                         </tr>
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
                         </td>
-                    </tr>
+                     </tr>
+                     <!-- END collapse2 -->
+                     <tr ng-show="item.isCollapsed">
+                                <td colspan="6">
+                                        <table class="table ">
+                                            <thead>
+                                                <tr>
+                                                        <th>Opção 1</th>
+                                                        <th>Opção 2</th>
+                                                        <th>Opção 3</th>
+                                                        <th>Opção 4</th>
+                                                        <th>Opção 5</th>
+                                                        <th>Opção 6</th>
+                                                        <th>Opção 7</th>
+                                                        <th>Opção 8</th>
+                                                        <th>Opção 9</th>
+                                                </tr>
+                                           </thead>
+                                           <tbody>
+                                                <tr>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">A
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                                <li><a href="#">HTML</a></li>
+                                                                                <li><a href="#">CSS</a></li>
+                                                                                <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">B
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">C
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">D
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">E
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">F
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">G
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">H
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                        <td>
+                                                                <div class="dropdown">
+                                                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">I
+                                                                        <span class="caret"></span></button>
+                                                                        <ul class="dropdown-menu">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        </ul>
+                                                                        </div>
+                                                        </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                </td>
+                             </tr>
+                             <!--end collapse -->
                 </tbody>
             </table>
         </div>
